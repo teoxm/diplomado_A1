@@ -11,7 +11,9 @@ public class Principal {
 		int aux2=2;
 		String opcion;
 		Equipos inem=new Equipos();
+		Jugadores jugadorInem=new Jugadores();
 		inem.establece_datos_equipos("DEORTIVO INEM", "JUVENIL",  "INSTITUTO EDUCATIVO", 357,3, true);
+		jugadorInem.estableceJugadores("1033696814", "Teofilo Mendez Oyaga", 1.61, 60, 7, "DEPORTIVO INEM" );
 		do {
 			String equipo=JOptionPane.showInputDialog("Ingrese el numero del equipo al cual desea gestionar \n"
 					+ "1) DEPORTIVO INEM \n "
@@ -26,7 +28,10 @@ public class Principal {
 						JOptionPane.showMessageDialog(null, inem.dame_info_equipo());
 					}
 					if(opcion.equals("2")) {
-						JOptionPane.showMessageDialog(null, "aún no hay un metodo para esta opción ");
+						if(equipo.equals("1")){
+							JOptionPane.showMessageDialog(null, jugadorInem.infoJugadores());
+						}
+						
 					}
 					if(opcion.equals("3")) {
 						aux2=1;
